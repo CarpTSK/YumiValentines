@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Bubbles&display=swap">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://i.pinimg.com/originals/04/2a/ef/042aefaccd947a8c07f36b11f228ba2e.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+    }
+
+    #container {
+      text-align: center;
+      color: white;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      border: 5px dashed #fff;
+      border-radius: 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .clickableText {
+      font-family: 'Rubik Bubbles', sans-serif; /* Using Rubik Bubbles font */
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #ffffff;
+      cursor: pointer;
+      transition: transform 0.3s, opacity 0.5s;
+      border: 2px solid #fff;
+      border-radius: 10px;
+      padding: 10px;
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0px 0px 10px 2px rgba(255, 255, 255, 0.5);
+      text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+    }
+
+    .clickableText:hover {
+      transform: scale(1.1);
+    }
+
+    #happyValentinesDay {
+      font-family: 'Rubik Bubbles', sans-serif; /* Using Rubik Bubbles font */
+      position: absolute;
+      top: 75px; /* Adjust the top position as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 64px; /* Increased font size */
+      font-weight: bold;
+      color: #ffffff;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+      border-radius: 10px; /* Adding border-radius for slight curvature */
+      padding: 10px 20px; /* Adding padding for a bit of space around the text */
+      background-color: rgba(255, 255, 255, 0.2); /* Background color with transparency */
+      text-shadow: -1px -1px 0 red, 1px -1px 0 red, -1px 1px 0 red, 1px 1px 0 red;
+    }
+
+    #backButton {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+    }
+
+    /* Styles for the particles */
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: pink;
+      clip-path: polygon(50% 0%, 100% 35%, 84% 98%, 50% 79%, 16% 98%, 0% 35%);
+      pointer-events: none;
+      z-index: 1000;
+    }
+
+    /* Style for the list of things I love about you */
+    .textContainer {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; /* Center text horizontally */
+      border: 2px solid #fff; /* Match border color with text buttons */
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Add black text shadow */
+    }
+
+    .textContainer ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .textContainer ul li {
+      margin-bottom: 10px;
+    }
+
+    .buttonContainer {
+      position: absolute;
+      top: calc(50% + 100px); /* Adjust vertical position */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .button {
+      font-family: 'Rubik Bubbles', sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Add black text shadow */
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    .yesButton:hover {
+      background-color: rgba(0, 255, 0, 0.5);
+    }
+
+    .noButton:hover {
+      background-color: rgba(255, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<div id="happyValentinesDay">Happy Valentine's Day Yumi :3</div>
+
+<div id="container">
+  <div class="clickableText" id="textButton1">Things I love about you</div>
+  <div class="clickableText" id="textButton2">Click me to reveal a big question</div>
+  <div class="clickableText" id="textButton3">Things that remind me of you</div>
+</div>
+
+<script>
+  const textButtons = document.querySelectorAll('.clickableText');
+
+  textButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      fadeOut(button.id);
+    });
+  });
+
+  function fadeOut(buttonId) {
+    const elementsToFade = document.querySelectorAll('body > *:not(script)');
+
+    elementsToFade.forEach(element => {
+      element.style.transition = 'opacity 1s';
+      element.style.opacity = '0';
+    });
+
+    setTimeout(() => {
+      showText(buttonId);
+      showBackButton();
+    }, 1000);
+  }
+
+  function showText(buttonId) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'textContainer'; // Add class for styling
+
+    const textList = document.createElement('ul');
+
+    switch (buttonId) {
+      case 'textButton1':
+        const items = ["I love how you actually try to spend time with me.", "I love how you like me for me, and I can be myself around you.", "I love how you always compliment me and make me feel good about myself.", "I love how you always match with me on everything.", "I love your voice, it's very soothing and beautiful.", "I love how you do your makeup, because you always look super pretty."];
+        items.forEach(item => {
+          const listItem = document.createElement('li');
+          listItem.textContent = item;
+          textList.appendChild(listItem);
+        });
+        break;
+      case 'textButton2':
+        const question = "Can I be your boyfriend?";
+        const listItem = document.createElement('li');
+        listItem.textContent = question;
+        textList.appendChild(listItem);
+
+        // Create button container
+        const buttonContainer = document.createElement('div');
+        buttonContainer.className = 'buttonContainer';
+
+        // Create Yes button
+        const yesButton = document.createElement('div');
+        yesButton.className = 'button yesButton';
+        yesButton.textContent = 'Yes';
+        yesButton.addEventListener('click', () => {
+          celebrate();
+        });
+
+        // Create No button
+        const noButton = document.createElement('div');
+        noButton.className = 'button noButton';
+        noButton.textContent = 'No';
+        noButton.addEventListener('click', () => {
+          increaseYesButtonSize(yesButton);
+        });
+
+        // Append buttons to container
+        buttonContainer.appendChild(yesButton);
+        buttonContainer.appendChild(noButton);
+
+        // Append button container to text container
+        textContainer.appendChild(buttonContainer);
+
+        break;
+      case 'textButton3':
+        const reminders = ["Pretty flowers, specifically pink flowers, because you're very pretty and you love pink.", "Anything Hello Kitty, because that's just your style :P.", "Cute kitty cats, it reminds me of how silly we act at times.", "Birds chirping, it reminds me of the calmness of being around you.", "Pajamas, because I just imagine matching them with you.", "GRAPES, YOU ALWAYS EAT GRAPES SO NOW EVERY TIME I SEE A GRAPE I JUST THINK OF YOU."];
+        reminders.forEach(reminder => {
+          const listItem = document.createElement('li');
+          listItem.textContent = reminder;
+          textList.appendChild(listItem);
+        });
+        break;
+      default:
+        const defaultItem = "Default Text";
+        const defaultListItem = document.createElement('li');
+        defaultListItem.textContent = defaultItem;
+        textList.appendChild(defaultListItem);
+    }
+
+    textContainer.appendChild(textList);
+    document.body.appendChild(textContainer);
+  }
+
+  function showBackButton() {
+    const backButton = document.createElement('div');
+    backButton.id = 'backButton';
+    backButton.textContent = 'Back';
+    backButton.addEventListener('click', () => {
+      window.location.reload();
+    });
+    document.body.appendChild(backButton);
+  }
+
+  function increaseYesButtonSize(yesButton) {
+    let currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+    currentSize += 50; // Increase size by 50px
+    yesButton.style.fontSize = currentSize + 'px';
+  }
+
+  function celebrate() {
+    const celebrationImage = document.createElement('img');
+    celebrationImage.src = 'https://media.tenor.com/3OCnPJkwyQIAAAAi/mocha-kiss.gif';
+    celebrationImage.style.position = 'absolute';
+    celebrationImage.style.top = '50%';
+    celebrationImage.style.left = '50%';
+    celebrationImage.style.transform = 'translate(-50%, -50%)';
+    document.body.appendChild(celebrationImage);
+
+    // Add text
+    const celebrationText = document.createElement('div');
+    celebrationText.textContent = 'YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY :3';
+    celebrationText.style.position = 'absolute';
+    celebrationText.style.top = 'calc(50% + 150px)';
+    celebrationText.style.left = '50%';
+    celebrationText.style.transform = 'translateX(-50%)';
+    celebrationText.style.fontSize = '24px';
+    celebrationText.style.fontWeight = 'bold';
+    celebrationText.style.color = 'white';
+    celebrationText.style.textShadow = '-1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black'; // Set text shadow to black
+    document.body.appendChild(celebrationText);
+
+    // Hide all other elements
+    document.querySelectorAll('.textContainer, .buttonContainer, #backButton').forEach(elem => elem.style.display = 'none');
+  }
+
+  // Function to create particles that follow the mouse
+  function createParticle(x, y) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    document.body.appendChild(particle);
+
+    particle.style.left = x + 'px';
+    particle.style.top = y + 'px';
+
+    setTimeout(() => {
+      particle.remove();
+    }, 200);
+  }
+
+  document.addEventListener('mousemove', (event) => {
+    createParticle(event.pageX, event.pageY);
+  });
+</script>
+
+</body>
+</html>
